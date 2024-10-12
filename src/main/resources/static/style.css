@@ -1,0 +1,215 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e6f2e6;
+    color: #333;
+}
+
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+
+.hero {
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 100, 0, 0.5);
+}
+
+.hero .text-center {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.hero p.lead {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.hero .btn-light {
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero .btn-light:hover {
+    background-color: #f1c40f;
+    color: #fff;
+}
+
+
+.weather-section {
+    background-color: #d4edda;
+}
+
+.weather-section h2 {
+    color: #155724;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.weather-section .card {
+    border: none;
+    background-color: #c3e6cb;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.weather-section .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.weather-section .card-title {
+    color: #155724;
+    font-weight: 700;
+}
+
+.weather-section .card-text {
+    font-size: 1.2rem;
+    color: #155724;
+}
+
+
+.advice-section {
+    background-color: #f8f9fa;
+}
+
+.advice-section h2 {
+    color: #28a745;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.advice-section .card {
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.advice-section .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.advice-section .card-title {
+    color: #28a745;
+    font-weight: 700;
+}
+
+.advice-section .card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+.advice-section .btn-success {
+    background-color: #28a745;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.advice-section .btn-success:hover {
+    background-color: #218838;
+}
+
+
+.todo-section {
+    background-color: #e6ffe6;
+}
+
+.todo-section h2 {
+    color: #1e7e34;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.todo-section .list-group-item {
+    background-color: #c3e6cb;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.todo-section .list-group-item:hover {
+    background-color: #99cc99;
+    transform: scale(1.02);
+}
+
+.todo-section .list-group-item h5 {
+    color: #155724;
+    font-weight: 700;
+}
+
+.todo-section .list-group-item p {
+    color: #155724;
+    font-size: 1rem;
+}
+
+
+.todo-section .list-group-item input[type="checkbox"] {
+    transform: scale(1.5);
+    margin-right: 10px;
+}
+
+
+footer {
+    background-color: #155724;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p.lead {
+        font-size: 1.2rem;
+    }
+
+    .hero .btn-light {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+
+    .weather-section .card,
+    .advice-section .card,
+    .todo-section .list-group-item {
+        margin-bottom: 20px;
+    }
+}
