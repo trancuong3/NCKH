@@ -1,0 +1,17 @@
+.sign__title {
+    margin-top: -15%;
+
+}
+.sign__forgot{
+    text-decoration: underline;
+    color: rgb(75, 79, 79);
+}
+.sign__submit{
+    margin: 20px 10px;
+    width: 50%;
+}
+.but{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
