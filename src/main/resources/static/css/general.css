@@ -1,0 +1,166 @@
+:root{
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #e6f2e6;
+    color: #333;
+    display: grid;
+    grid-template-areas:
+    "nav"
+    "main"
+    "footer";
+    grid-template-rows: 56px 1fr 56px;
+
+
+;
+    grid-template-rows: 56px 1fr 56px;
+}
+
+nav, footer {
+    background-color: #198754;
+    color: #fff;
+    height: 56px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li{
+    list-style: none;
+}
+
+.navbar, .navbar__navl, .navbar__navr, .but{
+    display: flex;
+    align-items: center;
+
+}
+
+.navbar__navl {
+    flex-grow: 1;
+}
+
+.navbar__brand {
+    margin: 0px 10px;
+    font-size: 1.3rem;
+}
+
+.navbar__link {
+    margin: 0 10px;
+    opacity: 0.5;
+}
+
+.active {
+    opacity: 1;
+}
+
+.sign{
+
+    width: 50%;
+    height: 65vh;
+    border: 2px solid #198754;
+    border-radius: 20px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input {
+    padding-left: 5px;
+    font-size: inherit;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    height: 27px;
+    background-color: #19875454;
+}
+
+.sign__title{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+    padding: 1% 0px;
+}
+
+.img__farmer{
+    text-align: center;
+    width: 100%;
+    height: 8vh;
+}
+.sign{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sign__form{
+    width: 40%;
+
+}
+.sign__submit{
+    width: 140px;
+    margin-top: 3%;
+    padding: 1% 5px;
+    font-size: 1.5rem;
+    border-radius: 7px;
+    background-color: #198754;
+    border: none;
+}
+.sign__submit:hover{
+    box-shadow: 0px 0px 15px 0px  rgba(64, 198, 113, 0.83);
+}
+.navbar-toggler {
+    width: 50px;
+    height: 50px;
+}
+.navbar__menu{
+    display: none;
+}
+@media (max-width: 583px){
+    .sign{
+        width: 90%;
+    }
+    .sign__form{
+        width: 70%;
+
+    }
+    .sign__submit{
+        font-size: 1.2rem;
+        width: 115px;
+    }
+    .navbar__menu{
+        display: block;
+        width: 10%;
+        height: 70%;
+        margin: 0px 10px;
+        filter: brightness(0) invert(1);
+    }
+    .navbar__navr, .navbar__navl{
+        display: none;
+    }
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+    }
+    .navbar__menu:active .navbar {
+        width: 100%;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        background-color: aqua;
+    }
+}
