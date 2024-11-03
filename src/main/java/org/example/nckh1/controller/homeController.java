@@ -4,18 +4,14 @@ package org.example.nckh1.controller;
 
 
 import org.example.nckh1.model.Weather;
-import org.springframework.scheduling.config.Task;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Controller
 @RequestMapping("/home")
-public class Home {
+public class homeController {
 
     @GetMapping("")
     public String index(Model model) {
@@ -25,6 +21,6 @@ public class Home {
         Weather weather = new Weather("28°C", "65%", "Nắng", "15 km/h");
         model.addAttribute("weather", weather);
 
-        return "home";
+        return "Home/index";
     }
 }

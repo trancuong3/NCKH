@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Famer - Nền tảng hỗ trợ nông nghiệp dựa trên thông tin thời tiết và lời khuyên cho nông dân.">
+    <meta name="keywords" content="nông nghiệp, thời tiết, lời khuyên, hỗ trợ nông dân, trồng cây">
+    <title>Famer - Hỗ Trợ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/home">Famer</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home">Trang Chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#advice-section">Lời Khuyên</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#weather-section">Thời Tiết</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Vị trí</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Hỗ Trợ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Đăng Ký</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Đăng Nhập</a>
+                </li>
+            </ul>
+            <span class="navbar-text">
+                Xin chào: <span th:text="${userLogin}">User</span>
+            </span>
+        </div>
+    </div>
+</nav>
+
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Trung Tâm Hỗ Trợ</h2>
+
+        <h5>Thông Tin Liên Hệ</h5>
+        <p>Để biết thêm thông tin hoặc nhận hỗ trợ, bạn có thể liên hệ với chúng tôi qua:</p>
+        <ul>
+            <li>Email: support@famer.com</li>
+            <li>Điện thoại: 0123-456-789</li>
+        </ul>
+
+        <h5>Câu Hỏi Thường Gặp (FAQ)</h5>
+        <div class="mb-3">
+            <h6>Câu hỏi 1: Làm thế nào để nhận thông tin thời tiết?</h6>
+            <p>Bạn có thể kiểm tra thông tin thời tiết trên trang chủ của chúng tôi.</p>
+        </div>
+        <div class="mb-3">
+            <h6>Câu hỏi 2: Làm thế nào để nhận lời khuyên nông nghiệp?</h6>
+            <p>Chúng tôi cung cấp lời khuyên dựa trên thông tin thời tiết và loại cây trồng của bạn.</p>
+        </div>
+        <div class="mb-3">
+            <h6>Câu hỏi 3: Tôi có thể thay đổi thông tin cá nhân không?</h6>
+            <p>Có, bạn có thể thay đổi thông tin cá nhân của mình trong phần cài đặt tài khoản.</p>
+        </div>
+
+        <h5>Dự báo thời tiết hiện tại</h5>
+        <div id="weather-widget" class="my-4">
+            <p id="weather-info">Đang tải thông tin thời tiết...</p>
+        </div>
+        <script>
+            // Giả sử bạn có API để lấy thông tin thời tiết
+            $(document).ready(function(){
+                // Fetch weather data from your API
+                // Update #weather-info with fetched data
+            });
+        </script>
+
+        <h5>Liên Hệ Với Chúng Tôi</h5>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Họ và tên</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Tin nhắn</label>
+                <textarea class="form-control" id="message" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Gửi</button>
+        </form>
+    </div>
+</section>
+
+<footer class="text-center py-3 bg-success text-white">
+    <p>&copy; 2024 Famer. Bảo lưu mọi quyền.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</body>
+</html>
