@@ -1,51 +1,50 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/images/leaf.png">
+    <link th:href="@{/images/leaf.png}" rel="icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>Đăng Nhập</title>
-    <link rel="stylesheet" href="/css/general.css">
-    <link rel="stylesheet" href="/css/sign_in.css">
+    <link th:href="@{/css/general.css}" rel="stylesheet">
+    <link th:href="@{/css/sign_in.css}" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
-        <a class="navbar__brand" href="#">Famer</a>
-        <img src="/images/menu.png" class="navbar__menu">
+        <a class="navbar__brand" th:href="#">Famer</a>
+        <img th:src="@{/images/menu.png}" class="navbar__menu">
         <ul class="navbar__navl">
             <li class="navbar__item">
-                <a class="navbar__link" href="#">Trang Chủ</a>
+                <a class="navbar__link" th:href="#">Trang Chủ</a>
             </li>
             <li class="navbar__item">
-                <a class="navbar__link" href="#advice-section">Lời Khuyên</a>
+                <a class="navbar__link" th:href="#advice-section">Lời Khuyên</a>
             </li>
             <li class="navbar__item">
-                <a class="navbar__link" href="#weather-section">Thời Tiết</a>
+                <a class="navbar__link" th:href="#weather-section">Thời Tiết</a>
             </li>
             <li class="navbar__item">
-                <a class="navbar__link" href="#position-section">Vị trí</a>
+                <a class="navbar__link" th:href="#position-section">Vị trí</a>
             </li>
         </ul>
 
         <ul class="navbar__navr">
             <li class="navbar__item">
-                <a class="navbar__link " href="#">Đăng Ký</a>
+                <a class="navbar__link" th:href="#">Đăng Ký</a>
             </li>
             <li class="navbar__item">
-                <a class="navbar__link active"  aria-current="page" href="#">Đăng Nhập</a>
+                <a class="navbar__link active" aria-current="page" th:href="#">Đăng Nhập</a>
             </li>
         </ul>
     </nav>
     
-   
     <main>
         <section class="sign">
             <h1 class="sign__title">Đăng Nhập</h1>
             <div>
-                <img class="img__farmer" src="/images/planting.png">
+                <img class="img__farmer" th:src="@{/images/planting.png}">
             </div>
-            <form class="sign__form" action="/sign_up" method="POST">
+            <form class="sign__form" th:action="@{/sign_up}" method="POST">
                 <div class="sign__form-group">
                     <label class="sign__label" for="username">Tên đăng nhập</label><br>
                     <input class="sign__input" type="text" id="username" name="username" required>
@@ -56,7 +55,7 @@
                 </div>
             </form>
             <div>
-                <a class="sign__forgot" href="#">Quên mật khẩu?</a>
+                <a class="sign__forgot" th:href="#">Quên mật khẩu?</a>
             </div>
             <div class="but">
                 <button class="sign__submit" type="submit">Đăng Nhập</button>
@@ -66,6 +65,6 @@
     </main>
 
     <footer></footer>
-    <script src="/js/sign.js"></script>
+    <script th:src="@{/js/sign.js}"></script>
 </body>
 </html>
