@@ -1,5 +1,5 @@
 
-package org.example.nckh1.model;
+package org.example.nckh1.Model;
 
 public class Weather {
     private String temperature;

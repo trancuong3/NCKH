@@ -1,17 +1,13 @@
 // src/main/java/org/example/nckh1/controller/HomeController.java
 
-package org.example.nckh1.controller;
+package org.example.nckh1.Controller;
 
 
-import org.example.nckh1.model.Weather;
-import org.springframework.scheduling.config.Task;
+import org.example.nckh1.Model.Weather;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 @RequestMapping("/home")

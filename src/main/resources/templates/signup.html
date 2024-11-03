@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" th:href="@{/css/images/leaf.png}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Đăng ký</title>
+    <link th:href="@{/css/general.css}" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar">
+    <a class="navbar__brand" href="#">Famer</a>
+    <img th:src="@{/css/images/menu.png}" class="navbar__menu" alt="Menu Icon">
+    <ul class="navbar__navl">
+        <li class="navbar__item">
+            <a class="navbar__link" href="#">Trang Chủ</a>
+        </li>
+        <li class="navbar__item">
+            <a class="navbar__link" href="#advice-section">Lời Khuyên</a>
+        </li>
+        <li class="navbar__item">
+            <a class="navbar__link" href="#weather-section">Thời Tiết</a>
+        </li>
+        <li class="navbar__item">
+            <a class="navbar__link" href="#position-section">Vị trí</a>
+        </li>
+    </ul>
+
+    <ul class="navbar__navr">
+        <li class="navbar__item">
+            <a class="navbar__link active" aria-current="page" href="#">Đăng Ký</a>
+        </li>
+        <li class="navbar__item">
+            <a class="navbar__link" href="#">Đăng Nhập</a>
+        </li>
+    </ul>
+</nav>
+
+<main>
+    <section class="sign">
+        <h1 class="sign__title">Đăng Ký</h1>
+        <div>
+            <img class="img__farmer" th:src="@{/css/images/planting.png}" alt="Planting">
+        </div>
+        <form class="sign__form" th:action="@{/sign_up}" method="post">
+            <div class="sign__form-group">
+                <label class="sign__label" for="username">Tên đăng nhập</label><br>
+                <input class="sign__input" type="text" id="username" name="username" required>
+            </div>
+            <div class="sign__form-group">
+                <label class="sign__label" for="password">Mật khẩu</label><br>
+                <input class="sign__input" type="password" id="password" name="password" required>
+            </div>
+            <div class="sign__form-group">
+                <label class="sign__label" for="re-password">Nhập lại mật khẩu</label><br>
+                <input class="sign__input" type="password" id="re-password" name="re-password" required>
+            </div>
+            <div class="sign__form-group">
+                <label class="sign__label" for="email">Email</label><br>
+                <input class="sign__input" type="email" id="email" name="email" required>
+            </div>
+            <div class="sign__form-group">
+                <label class="sign__label" for="phone">Số điện thoại</label><br>
+                <input class="sign__input" type="tel" id="phone" name="phone" required>
+            </div>
+            <button class="sign__submit" type="submit">Đăng Ký</button>
+        </form>
+    </section>
+</main>
+
+<footer></footer>
+<script th:src="@{/static/js/sign.js}"></script>
+</body>
+</html>
