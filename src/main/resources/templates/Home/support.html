@@ -12,9 +12,38 @@
     <link rel="stylesheet" th:href="@{/css/styles.css}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-brand {
+            font-weight: 700;
+        }
+        .card {
+            border: none;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .faq-section h6 {
+            color: #0d6efd;
+        }
+        .btn-success {
+            background-color: #198754;
+            border: none;
+        }
+        .form-control:focus {
+            box-shadow: 0px 0px 8px rgba(25, 135, 84, 0.5);
+        }
+        footer {
+            background-color: #198754;
+        }
+    </style>
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
     <div class="container-fluid">
         <a class="navbar-brand" href="/home">Famer</a>
@@ -56,74 +85,85 @@
     </div>
 </nav>
 
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
-
 <section class="py-5">
     <div class="container">
         <h2 class="text-center mb-4">Trung Tâm Hỗ Trợ</h2>
 
-        <h5>Thông Tin Liên Hệ</h5>
-        <p>Để biết thêm thông tin hoặc nhận hỗ trợ, bạn có thể liên hệ với chúng tôi qua:</p>
-        <ul>
-            <li>Email: support@famer.com</li>
-            <li>Điện thoại: 0123-456-789</li>
-        </ul>
-
-        <h5>Câu Hỏi Thường Gặp (FAQ)</h5>
-        <div class="mb-3">
-            <h6>Câu hỏi 1: Làm thế nào để nhận thông tin thời tiết?</h6>
-            <p>Bạn có thể kiểm tra thông tin thời tiết trên trang chủ của chúng tôi.</p>
-        </div>
-        <div class="mb-3">
-            <h6>Câu hỏi 2: Làm thế nào để nhận lời khuyên nông nghiệp?</h6>
-            <p>Chúng tôi cung cấp lời khuyên dựa trên thông tin thời tiết và loại cây trồng của bạn.</p>
-        </div>
-        <div class="mb-3">
-            <h6>Câu hỏi 3: Tôi có thể thay đổi thông tin cá nhân không?</h6>
-            <p>Có, bạn có thể thay đổi thông tin cá nhân của mình trong phần cài đặt tài khoản.</p>
+        <div class="card p-4 mb-4">
+            <h5>Thông Tin Liên Hệ</h5>
+            <p>Để biết thêm thông tin hoặc nhận hỗ trợ, bạn có thể liên hệ với chúng tôi qua:</p>
+            <ul>
+                <li>Email: support@famer.com</li>
+                <li>Điện thoại: 0123-456-789</li>
+            </ul>
         </div>
 
-        <h5>Dự báo thời tiết hiện tại</h5>
-        <div id="weather-widget" class="my-4">
-            <p id="weather-info">Đang tải thông tin thời tiết...</p>
+        <div class="card p-4 mb-4 faq-section">
+            <h5>Câu Hỏi Thường Gặp (FAQ)</h5>
+            <div class="mb-3">
+                <h6><i class="bi bi-question-circle"></i> Làm thế nào để nhận thông tin thời tiết?</h6>
+                <p>Bạn có thể kiểm tra thông tin thời tiết trên trang chủ của chúng tôi.</p>
+            </div>
+            <div class="mb-3">
+                <h6><i class="bi bi-question-circle"></i> Làm thế nào để nhận lời khuyên nông nghiệp?</h6>
+                <p>Chúng tôi cung cấp lời khuyên dựa trên thông tin thời tiết và loại cây trồng của bạn.</p>
+            </div>
+            <div class="mb-3">
+                <h6><i class="bi bi-question-circle"></i> Tôi có thể thay đổi thông tin cá nhân không?</h6>
+                <p>Có, bạn có thể thay đổi thông tin cá nhân của mình trong phần cài đặt tài khoản.</p>
+            </div>
+            <div class="mb-3">
+                <h6><i class="bi bi-question-circle"></i> Làm thế nào để cập nhật thông tin thời tiết theo thời gian thực?</h6>
+                <p>Thông tin thời tiết của chúng tôi được cập nhật liên tục. Bạn có thể làm mới trang hoặc truy cập lại vào bất kỳ lúc nào để nhận thông tin thời tiết mới nhất.</p>
+            </div>
+            <div class="mb-3">
+                <h6><i class="bi bi-question-circle"></i> Tôi cần phải đăng ký tài khoản để sử dụng dịch vụ không?</h6>
+                <p>Bạn có thể xem thông tin chung mà không cần tài khoản. Tuy nhiên, để nhận các lời khuyên cá nhân hóa, vui lòng đăng ký và đăng nhập tài khoản.</p>
+            </div>
+            <div class="mb-3">
+                <h6><i class="bi bi-question-circle"></i> Làm thế nào để quản lý cây trồng và nhận cảnh báo sâu bệnh?</h6>
+                <p>Chúng tôi sẽ gửi cảnh báo và lời khuyên liên quan đến cây trồng bạn đã đăng ký khi có sự thay đổi thời tiết hoặc rủi ro sâu bệnh có thể xảy ra.</p>
+            </div>
+            <div class="mb-3">
+                <h6><i class="bi bi-question-circle"></i> Tôi có thể tìm hiểu về các giống cây trồng nào?</h6>
+                <p>Chúng tôi cung cấp thông tin về nhiều giống cây trồng phổ biến và sẽ cập nhật thêm. Bạn có thể tìm kiếm thông tin dựa trên loại cây mà bạn quan tâm.</p>
+            </div>
+            <div class="mb-3">
+                <h6><i class="bi bi-question-circle"></i> Dịch vụ này có miễn phí không?</h6>
+                <p>Chúng tôi cung cấp phiên bản miễn phí với các tính năng cơ bản. Ngoài ra, bạn có thể nâng cấp lên gói dịch vụ cao cấp để nhận thêm nhiều tính năng hỗ trợ.</p>
+            </div>
         </div>
-        <script>
-            // Giả sử bạn có API để lấy thông tin thời tiết
-            $(document).ready(function(){
-                // Fetch weather data from your API
-                // Update #weather-info with fetched data
-            });
-        </script>
 
-        <h5>Liên Hệ Với Chúng Tôi</h5>
-        <form>
-            <div class="mb-3">
-                <label for="name" class="form-label">Họ và tên</label>
-                <input type="text" class="form-control" id="name" required>
+        <div class="card p-4 mb-4">
+            <h5>Dự báo thời tiết hiện tại</h5>
+            <div id="weather-widget" class="my-4">
+                <p id="weather-info">Đang tải thông tin thời tiết...</p>
             </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" required>
-            </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">Tin nhắn</label>
-                <textarea class="form-control" id="message" rows="3" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-success">Gửi</button>
-        </form>
+        </div>
+
+        <div class="card p-4">
+            <h5>Liên Hệ Với Chúng Tôi</h5>
+            <form action="/contact/send" method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Họ và tên</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Tin nhắn</label>
+                    <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Gửi</button>
+            </form>
+
+        </div>
     </div>
 </section>
 
-<footer class="text-center py-3 bg-success text-white">
+<footer class="text-center py-3 text-white">
     <p>&copy; 2024 Famer. Bảo lưu mọi quyền.</p>
 </footer>
 
