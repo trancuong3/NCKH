@@ -1,6 +1,6 @@
 // src/main/java/org/example/nckh1/controller/HomeController.java
 
-package org.example.nckh1.controller;
+package org.example.nckh1.controller.Home;
 
 
 import org.example.nckh1.model.Weather;

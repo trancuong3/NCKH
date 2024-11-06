@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Chỉnh sửa người dùng</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <script>
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById("password");
+            const toggleButton = document.getElementById("togglePassword");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleButton.innerText = "Ẩn";
+            } else {
+                passwordField.type = "password";
+                toggleButton.innerText = "Hiện";
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>Chỉnh sửa người dùng</h1>
+<form th:action="@{/users/edit}" th:object="${user}" method="post">
+    <div>
+        <label>ID:</label>
+        <input type="text" th:field="*{userId}" readonly="readonly"/>
+    </div>
+    <div>
+        <label>Tên:</label>
+        <input type="text" th:field="*{username}" required="required"/>
+    </div>
+    <div>
+        <label>Mật khẩu:</label>
+        <input type="password" id="password" th:value="*{password}" required="required"/>
+        <button type="button" id="togglePassword" onclick="togglePasswordVisibility()">Hiện</button>
+    </div>
+    <div>
+        <label>Email:</label>
+        <input type="email" th:field="*{email}" required="required"/>
+    </div>
+    <div>
+        <label>Vị trí:</label>
+        <input type="text" th:field="*{location}" required="required"/>
+    </div>
+    <div>
+        <label>Số điện thoại:</label>
+        <input type="text" th:field="*{phone}" required="required"/>
+    </div>
+    <div>
+        <label>Thời gian tạo:</label>
+        <input type="datetime-local" th:field="*{createdAt}" th:value="${#temporals.format(user.createdAt, 'dd/MM/yyyy HH:mm:ss')}" required="required"/>
+    </div>
+    <div>
+        <button type="submit">Cập nhật</button>
+        <a href="/users">Hủy</a>
+    </div>
+</form>
+</body>
+</html>

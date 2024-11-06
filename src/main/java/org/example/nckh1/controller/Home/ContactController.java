@@ -1,4 +1,4 @@
-package org.example.nckh1.controller;
+package org.example.nckh1.controller.Home;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
