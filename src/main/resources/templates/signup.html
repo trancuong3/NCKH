@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/images/leaf.png}" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Đăng ký</title>
+    <link th:href="@{/css/general.css}" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar">
+    <a class="navbar__brand" th:href="@{/}">Famer</a>
+    <img th:src="@{/images/menu.png}" class="navbar__menu">
+    <ul class="navbar__navl">
+        <li class="navbar__item">
+            <a class="navbar__link" th:href="@{/}">Trang Chủ</a>
+        </li>
+        <li class="navbar__item">
+            <a class="navbar__link" th:href="@{#advice-section}">Lời Khuyên</a>
+        </li>
+        <li class="navbar__item">
+            <a class="navbar__link" th:href="@{#weather-section}">Thời Tiết</a>
+        </li>
+        <li class="navbar__item">
+            <a class="navbar__link" th:href="@{#position-section}">Vị trí</a>
+        </li>
+    </ul>
+
+    <ul class="navbar__navr">
+        <li class="navbar__item">
+            <a class="navbar__link" th:href="@{/signup}">Đăng Ký</a>
+        </li>
+        <li class="navbar__item">
+            <a class="navbar__link" th:href="@{/login}">Đăng Nhập</a>
+        </li>
+    </ul>
+</nav>
+
+<main>
+    <section class="sign">
+        <h1 class="sign__title">Đăng Ký</h1>
+        <div>
+            <img class="img__farmer" th:src="@{/images/planting.png}">
+        </div>
+        <form class="sign__form" action="/signup" method="POST" id="signupForm">
+            <div class="sign__form-group">
+                <label class="sign__label" for="username">Tên đăng nhập</label><br>
+                <input class="sign__input" type="text" id="username" name="username" required>
+            </div>
+            <div class="sign__form-group">
+                <label class="sign__label" for="password">Mật khẩu</label><br>
+                <input class="sign__input" type="password" id="password" name="password" required>
+            </div>
+            <div class="sign__form-group">
+                <label class="sign__label" for="re-password">Nhập lại mật khẩu</label><br>
+                <input class="sign__input" type="password" id="re-password" name="re-password" required>
+            </div>
+            <div class="sign__form-group">
+                <label class="sign__label" for="email">Email</label><br>
+                <input class="sign__input" type="email" id="email" name="email" required>
+            </div>
+            <div class="sign__form-group">
+                <label class="sign__label" for="phone">Số điện thoại</label><br>
+                <input class="sign__input" type="tel" id="phone" name="phone" required>
+            </div>
+        </form>
+        <button class="sign__submit" type="submit" id="submitForm" value="submit">Đăng Ký</button>
+    </section>
+</main>
+
+<footer></footer>
+<script th:src="@{/js/sign.js}"></script>
+</body>
+</html>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const submit = document.getElementById("submitForm");
+        const signupForm = document.getElementById("signupForm");
+
+        submit.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const email = document.getElementById("email").value;
+            const password2 = document.getElementById("re-password").value;
+            const phoneNumber = document.getElementById("phone").value;
+
+            if (password !== password2) {
+                alert("Mật khẩu nhập lại không khớp. Vui lòng kiểm tra lại.");
+                return;
+            }
+
+            if (!email.includes('@')) {
+                alert("Email không hợp lệ. Vui lòng kiểm tra lại.");
+                return;
+            }
+            const phonePattern = /^[0-9]{10}$/;
+            if (!phonePattern.test(phoneNumber)) {
+                alert("Số điện thoại không hợp lệ. Vui lòng nhập lại.");
+                return;
+            }
+
+
+            const data = { username, password, email, phoneNumber };
+
+            fetch("/signup", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+                .then(res => res.json())
+                .then(response => {
+                    if (response.success) {
+                        alert("Đăng ký thành công!");
+                        window.location.href = "/login";
+                    } else {
+                        alert("Đăng ký không thành công, vui lòng thử lại.");
+                    }
+                })
+                .catch(error => console.error("Error:", error));
+        });
+    });
+</script>
