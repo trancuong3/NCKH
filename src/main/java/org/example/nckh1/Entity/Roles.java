@@ -16,11 +16,9 @@ public class Roles {
 
 
     private String name;
-    @ManyToMany(mappedBy = "roles")
-    private Set<Users> users;
-    public Long getId() {
-        return id;
-    }
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private Users user;
 
     public void setId(Long id) {
         this.id = id;

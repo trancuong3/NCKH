@@ -8,7 +8,9 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<Users, Integer> {
+    // Phương thức tìm người dùng theo tên đăng nhập
     Optional<Users> findUserByUsername(String username);
+
+    // Thêm phương thức tìm người dùng theo email (nếu cần)
+    Optional<Users> findUserByEmail(String email);
 }
-
-
