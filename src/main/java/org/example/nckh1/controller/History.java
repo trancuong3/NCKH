@@ -40,4 +40,5 @@ public class History {
         model.addAttribute("tasks", tasks);
         return "history";
     }
+
 }
