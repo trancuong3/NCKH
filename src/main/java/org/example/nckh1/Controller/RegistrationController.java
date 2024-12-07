@@ -1,6 +1,6 @@
 package org.example.nckh1.Controller;
 
-import org.example.nckh1.Entity.Users;
+import org.example.nckh1.Model.Users;
 import org.example.nckh1.Service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

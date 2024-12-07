@@ -1,6 +1,6 @@
 package org.example.nckh1.Repository;
 
-import org.example.nckh1.Entity.Users;
+import org.example.nckh1.Model.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,4 +13,5 @@ public interface UserRepository extends JpaRepository<Users, Integer> {
 
     // Thêm phương thức tìm người dùng theo email (nếu cần)
     Optional<Users> findUserByEmail(String email);
+
 }

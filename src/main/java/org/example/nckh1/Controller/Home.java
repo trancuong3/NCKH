@@ -3,6 +3,7 @@
 package org.example.nckh1.Controller;
 
 
+import org.example.nckh1.Model.Users;
 import org.example.nckh1.Model.Weather;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,8 +16,8 @@ public class Home {
 
     @GetMapping("")
     public String index(Model model) {
-
-        String userLogin = "Nguyen Van A";
+        Users user = new Users();
+        String userLogin = user.getUsername();
         model.addAttribute("userLogin", userLogin);
         Weather weather = new Weather("28°C", "65%", "Nắng", "15 km/h");
         model.addAttribute("weather", weather);
